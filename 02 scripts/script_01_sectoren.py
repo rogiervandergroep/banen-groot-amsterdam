@@ -78,3 +78,5 @@ procestechniek = list(map(str, range(10,23))) # en 71120 (act. van ingenieurs et
 # 09100 Dienstverlening voor de winning van aardolie en aardgas
 
 
+bouw = 'F'
+IT = 'K'
