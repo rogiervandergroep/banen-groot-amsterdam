@@ -1,6 +1,6 @@
 # sectorafbakeningen
 
-industrie <- list(map(str, range(10, 34)))
+industrie = list(map(str, range(10, 34)))
 
 # 10 - Vervaardiging van voedingsmiddelen
 # 11 - Vervaardiging van dranken
@@ -26,7 +26,6 @@ industrie <- list(map(str, range(10, 34)))
 # 31 - Vervaardiging van meubelen
 # 32 - Vervaardiging van overige goederen
 # 33 - Reparatie, onderhoud en installatie van machines en apparaten
-
 
 vervoer =  list(map(str, [49, 50, 51, 52, 53]))
 
@@ -77,3 +76,5 @@ procestechniek = list(map(str, range(10,23))) # en 71120 (act. van ingenieurs et
 # 50202 Zee- en kustsleepvaart
 # 42220 Bouw van netwerken voor elektriciteit en telecommunicatie?
 # 09100 Dienstverlening voor de winning van aardolie en aardgas
+
+
