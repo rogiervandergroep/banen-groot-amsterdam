@@ -1,6 +1,17 @@
 # sectorafbakeningen
 
-industrie = list(map(str, range(10, 34)))
+
+bouw = 'F'
+IT = 'K'
+energie = ['D']
+voeding   = list(map(str, (10,11,12)))
+industrie = list(map(str, (24,25,28,29,30,31,32,33, 34)))
+electrotechniek = ["26","27"] # en 4321 elektrische installatie (niet meenemen)
+procestechniek_2 = list(map(str, range(13,23))) # en 71120 (act. van ingenieurs etc.) (niet meenemen)
+procestechniek_1 = ["B", "E"]    # E is waterwinning en B defstoffen
+medtech = ['266']
+vervoer = list(map(str, (49, 50, 51, 53)))
+opslag  = ["52"]
 
 # 10 - Vervaardiging van voedingsmiddelen
 # 11 - Vervaardiging van dranken
@@ -27,7 +38,22 @@ industrie = list(map(str, range(10, 34)))
 # 32 - Vervaardiging van overige goederen
 # 33 - Reparatie, onderhoud en installatie van machines en apparaten
 
-vervoer =  list(map(str, [49, 50, 51, 52, 53]))
+### maritiem:
+# 301: Scheepsbouw
+# 33150: Reparatie en onderhoud van schepen en drijvend materieel
+# 71120: Activiteiten van ingenieurs en overig technisch ontwerp en advies
+# 4291: Natte waterbouw (infrastructuur op en rond het water)
+# 5222: Dienstverlening voor de vaart (zoals loodsen, slepen, bergen en havenactiviteiten)
+
+### off-shore:
+# 06 Winning van aardolie en aardgas
+# 35112 Productie van elektriciteit door windenergie
+# 42910 Natte waterbouw
+# 50201 Zee- en kustvaart (vracht- en tankvaart)
+# 50202 Zee- en kustsleepvaart
+# 42220 Bouw van netwerken voor elektriciteit en telecommunicatie?
+# 09100 Dienstverlening voor de winning van aardolie en aardgas
+
 
 # H - VERVOER EN OPSLAG
 # 49 - Vervoer over land en via pijpleidingen
@@ -56,27 +82,3 @@ vervoer =  list(map(str, [49, 50, 51, 52, 53]))
 # 531 - Postdiensten met universele dienstverplichting
 # 532 - Overige postdiensten en koeriersdiensten
 # 533 - Bemiddelingsactiviteiten in verband met post- en koeriersdiensten
-
-
-electrotechniek = ["26","27"] # en 4321 elektrische installatie
-procestechniek = list(map(str, range(10,23))) # en 71120 (act. van ingenieurs etc.)
-
-### maritiem:
-# 301: Scheepsbouw
-# 33150: Reparatie en onderhoud van schepen en drijvend materieel
-# 71120: Activiteiten van ingenieurs en overig technisch ontwerp en advies
-# 4291: Natte waterbouw (infrastructuur op en rond het water)
-# 5222: Dienstverlening voor de vaart (zoals loodsen, slepen, bergen en havenactiviteiten)
-
-### off-shore:
-# 06 Winning van aardolie en aardgas
-# 35112 Productie van elektriciteit door windenergie
-# 42910 Natte waterbouw
-# 50201 Zee- en kustvaart (vracht- en tankvaart)
-# 50202 Zee- en kustsleepvaart
-# 42220 Bouw van netwerken voor elektriciteit en telecommunicatie?
-# 09100 Dienstverlening voor de winning van aardolie en aardgas
-
-
-bouw = 'F'
-IT = 'K'
