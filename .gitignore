@@ -48,3 +48,8 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+
+# mappen
+00 ruwe data/
+10 reports/

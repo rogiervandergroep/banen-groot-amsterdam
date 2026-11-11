@@ -9,7 +9,7 @@ industrie = list(map(str, (24,25,28,29,30,31,32,33, 34)))
 electrotechniek = ["26","27"] # en 4321 elektrische installatie (niet meenemen)
 procestechniek_2 = list(map(str, range(13,23))) # en 71120 (act. van ingenieurs etc.) (niet meenemen)
 procestechniek_1 = ["B", "E"]    # E is waterwinning en B defstoffen
-medtech = '266'
+medtech = ['211', '212', '266', '325']
 vervoer = list(map(str, (49, 50, 51, 53)))
 opslag  = "52"
 

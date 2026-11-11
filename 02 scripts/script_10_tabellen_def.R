@@ -1,26 +1,26 @@
 library(tidyverse)
 
-tabel <- read_csv("tabel_lisa_groot_amsterdam.csv") |>
-    pivot_longer(cols = starts_with("aantal"))
+# tabel <- read_csv("00 ruwe data/tabel_lisa_groot_amsterdam.csv") |>
+#     pivot_longer(cols = starts_with("aantal"))
 
-tabel_sectoren <- read_csv("tabel_lisa_gr_ams_sectoren.csv") |>
+tabel_sectoren <- read_csv("00 ruwe data/tabel_lisa_gr_ams_sectoren.csv") |>
     pivot_longer(cols = starts_with("aantal"))
 
 ### voor excel ----
 
 tabel_excel <- list(
-    totaal = read_csv("tabel_lisa_groot_amsterdam.csv") |>
-        select(
-            peildatum,
-            gemeentenaam,
-            gemeentecode,
-            `aantal vestigingen`,
-            aantal_werkzamepersonen,
-            aantal_wp_fulltime,
-            aantal_wp_parttime
-        ),
+    # totaal = read_csv("00 ruwe data/tabel_lisa_groot_amsterdam.csv") |>
+    #     select(
+    #         peildatum,
+    #         gemeentenaam,
+    #         gemeentecode,
+    #         `aantal vestigingen`,
+    #         aantal_werkzamepersonen,
+    #         aantal_wp_fulltime,
+    #         aantal_wp_parttime
+    #     ),
 
-    sectoren = read_csv("tabel_lisa_gr_ams_sectoren.csv") |>
+    sectoren = read_csv("00 ruwe data/tabel_lisa_gr_ams_sectoren.csv") |>
         select(
             peildatum,
             sector,
@@ -35,6 +35,38 @@ tabel_excel <- list(
 )
 
 openxlsx::write.xlsx(tabel_excel, "tab_ban_ves_groot_ams.xlsx", withFilter = T)
+
+### opsplitsen naar sectoren per tabblad ---
+sectoren <- read_csv("00 ruwe data/tabel_lisa_gr_ams_sectoren.csv") |>
+    select(
+        peildatum,
+        sector,
+        sbi_2,
+        sbi_groep,
+        sbi_groep_omschrijving,
+        `aantal vestigingen`,
+        aantal_werkzamepersonen,
+        aantal_wp_fulltime,
+        aantal_wp_parttime
+    )
+
+sectoren_vector <- sectoren |>
+    select(sector) |>
+    arrange(sector) |>
+    distinct(sector) |>
+    pull()
+
+sectoren_lijst <- sectoren |>
+    arrange(sector) |>
+    group_by(sector) |>
+    group_split() |>
+    setNames(sectoren_vector)
+
+openxlsx::write.xlsx(
+    sectoren_lijst,
+    "10 reports/tab_ban_ves_groot_ams_lijst.xlsx",
+    withFilter = T
+)
 
 
 # vestigingen
